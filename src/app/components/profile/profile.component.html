@@ -1,0 +1,16 @@
+<div *ngIf="profile">
+  <div class="card">
+    <div class="card-header bg-primary text-white">
+      <h4>Detalles del Empleado</h4>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">ID Empleado: {{ profile.idEmpleado }}</h5>
+      <p class="card-text"><strong>Apellido:</strong> {{ profile.apellido }}</p>
+      <p class="card-text"><strong>Oficio:</strong> {{ profile.oficio }}</p>
+      <p class="card-text"><strong>Salario:</strong> ${{ profile.salario | number }}</p>
+      <p class="card-text"><strong>Director:</strong> {{ profile.director === 0 ? 'Sí' : 'No' }}</p>
+      <a [routerLink]="['/subordinados']" class="btn btn-outline-primary">SUBORDINADOS</a>
+      <button (click)="logOut()" class="btn btn-outline-primary">Log Out</button>
+    </div>
+  </div>
+</div>

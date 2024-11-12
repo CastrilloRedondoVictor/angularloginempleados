@@ -1,0 +1,23 @@
+<div class="container p-5 my-5">
+  <h1 class="text-center text-primary mb-4">Lista de Subordinados</h1>
+
+  <a [routerLink]="['/profile']" class="btn btn-outline-primary mb-3">VOLVER</a>
+
+  <div *ngIf="subordinados">
+    <div *ngFor="let empleado of subordinados" class="card mb-3">
+      <div class="card-header bg-primary text-white">
+        <h4>{{ empleado.apellido }}, {{ empleado.idEmpleado }}</h4>
+      </div>
+      <div class="card-body">
+        <p><strong>Oficio:</strong> {{ empleado.oficio }}</p>
+        <p><strong>Salario:</strong> ${{ empleado.salario | number }}</p>
+        <p><strong>Director:</strong> {{ empleado.director === 1 ? 'Sí' : 'No' }}</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div *ngIf="!subordinados">
+    <p class="text-warning">No hay subordinados disponibles.</p>
+  </div>
+</div>

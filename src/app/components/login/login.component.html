@@ -1,0 +1,45 @@
+<div class="container p-5 my-5">
+  <h1 class="text-center text-primary mb-4">Iniciar Sesión</h1>
+
+  <!-- Formulario de Login -->
+  <form (ngSubmit)="onLogin()" class="p-4 border rounded shadow-sm bg-light">
+
+    <!-- Campo de Nombre de Usuario -->
+    <div class="form-group">
+      <label for="username" class="font-weight-bold">Nombre de Usuario</label>
+      <input
+        type="text"
+        id="username"
+        class="form-control"
+        [(ngModel)]="username"
+        name="username"
+        placeholder="Ingresa tu nombre de usuario"
+        required />
+    </div>
+
+    <!-- Campo de Contraseña -->
+    <div class="form-group">
+      <label for="password" class="font-weight-bold">Contraseña</label>
+      <input
+        type="password"
+        id="password"
+        class="form-control"
+        [(ngModel)]="password"
+        name="password"
+        placeholder="Ingresa tu contraseña"
+        required />
+    </div>
+
+    <!-- Mensaje de Error -->
+    <div *ngIf="errorMessage" class="text-danger mt-2">
+      <small>{{ errorMessage }}</small>
+    </div>
+
+    <!-- Botón de Login -->
+    <div class="d-flex justify-content-between mt-4">
+      <button type="submit" class="btn btn-primary">
+        <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+      </button>
+    </div>
+  </form>
+</div>
